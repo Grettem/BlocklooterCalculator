@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blocklooter earnings calculator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+</head>
+<body>
+    <!-- Title TODO: logo-->
+     <div class="container has-text-centered pt-6">
+        <h1 class="title">Blocklooter Calculator</h1>
+        <h2 class="subtitle">Made by Grettem</h2>
+     </div>
+
+     <!-- Calculator form -->
+      <div class="container pt-6 is-justify-content-center px-6">
+        <!-- Block reward-->
+        <div class="field">
+            <label class="label">Block pool reward</label>
+            <div class="control">
+                <input class="input" id="reward" class="number" placeholder="0.00000001">
+            </div>
+        </div>
+
+        <!-- Mining pool power field -->
+        <div class="field pt-3">
+            <label class="label">Mining pool power (hash)</label>
+            <div class="control">
+                <input class="input" id="poolpower" class="number" placeholder="849201">
+            </div>
+        </div>
+
+        <!-- User power field -->
+        <div class="container pt-3">
+            <label class="label">Your desired mining power (hash)</label>
+            <div class="control">
+                <input class="input" id="userpower" class="number" placeholder="40">
+            </div>
+        </div>
+
+        <!-- Coin dropdown-->
+        <div class="container pt-3">
+            <label class="label">Cryptocurrency</label>
+            <div class="control">
+                <div class="select">
+                    <select id="currency">
+                        <option value="btc">Bitcoin</option>
+                        <option value="ltc">Litecoin</option>
+                        <option value="doge">Dogecoin</option>
+                        <option value="bnb">Binance Coin</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calculate button -->
+         <div class="container pt-4">
+            <div class="field">
+                <div class="control">
+                    <button class="button is-link" onclick="calculate();">Calculate</button>
+                </div>
+             </div>
+         </div>
+
+        <div id="resultarea" class="container pt-5 mb-6">
+            <textarea class="textarea" placeholder="Result" rows="5" disabled></textarea>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

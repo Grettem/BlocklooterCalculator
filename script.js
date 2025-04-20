@@ -1,5 +1,22 @@
 console.log('Script working!');
 
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.querySelector('.modal');
+    const closeButton = modal.querySelector('.delete');
+  
+    // Abre el modal al cargar la página
+    if (modal) {
+      modal.classList.add('is-active');
+    }
+  
+    // Cierra el modal al hacer clic en el botón de cerrar
+    if (closeButton) {
+      closeButton.addEventListener('click', () => {
+        modal.classList.remove('is-active');
+      });
+    }
+  });
+
 function calcRewards(blockReward, crypto) {
     return [blockReward*6, blockReward*6*24, blockReward*6*24*30, crypto + " REWARDS\n------------\nEarnings per block: " + blockReward.toFixed(18) + " " + crypto + "\nEarnings per hour: " + (blockReward*6).toFixed(18) + " " + crypto + "\nEarnings per day: " + (blockReward*6*24).toFixed(18) + " " + crypto + "\nEarnings per month: " + (blockReward*6*24*30).toFixed(18) + " " + crypto]
 }
@@ -33,7 +50,4 @@ function calculate() {
                 let [hourReward, dayReward, monthReward, text] = calcRewards(userReward, 'BNB')
                 document.getElementById('resultarea').innerText = text
             }
-
-
-    
 }

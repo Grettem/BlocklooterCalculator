@@ -3,10 +3,11 @@ console.log('Script working!');
 document.addEventListener('DOMContentLoaded', () => {
     const modal = document.querySelector('.modal');
     const closeButton = modal.querySelector('.delete');
-  
+
     // Abre el modal al cargar la página
     if (modal) {
       modal.classList.add('is-active');
+      void modal.offsetWidth;
     }
   
     // Cierra el modal al hacer clic en el botón de cerrar
